@@ -1,0 +1,53 @@
+
+<p id="notice"><%= notice %></p>
+<table class="table table-striped">
+  <tr>
+    <th>Address 1</th>
+    <th>Address 2</th>
+    <th>Distance</th>
+    <th>Date</th>
+    <th>Option</th>
+  </tr>
+  <% if @activities.any? %>
+    <% for activity in @activities %>
+      <tr>
+        <td><%= activity.address1 %></td>
+        <td><%= activity.address2 %></td>
+        <td><%= activity.distance %> km</td>
+        <td><%= activity.created_at.strftime("%Y/%m/%d") %> </td>
+        <td><%= link_to "Show", activity %></td>
+      </tr>
+    <% end %>
+  <% else %>
+    <tr>
+      <td colspan="5">You have no activity so far</td>
+    </tr>
+  <% end %>
+</table>
+
+<h2>Your monthly statistics</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <td> Day </td>
+      <td> Distance </td>
+    </tr>
+  </thead>
+  <tbody>
+
+  <% if @monthly.any? %>
+    <% @monthly.each do |day| %>
+      <tr>
+        <td> <%= day.first.last %> </td>
+        <td> <%= day.last %> km </td>
+      </tr>
+    <% end %>
+  <% else %>
+    <tr>
+      <td colspan="2">You have no activity so far</td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<p class="text-center">Haven't you had enough? Add another activity</p>
+<p><%= link_to "New activity", new_activity_path, class: "btn btn-purple" %></p>

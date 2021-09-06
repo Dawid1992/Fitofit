@@ -1,0 +1,27 @@
+<%= form_with(model: activity) do |form| %>
+    <h2 class="text-dark-blue mb-3 mt-3 text-center">
+      Tell me how far you went today
+    </h2>
+    <% if activity.errors.any? %>
+      <ul>
+      <% activity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    <% end %>
+    <div class="row">
+      <div class="field col">
+        <%= form.label :address1 ,class:"form-label" %>
+        <%= form.text_field :address1, :required => true, class:"form-control" %>
+      </div>
+  
+      <div class="field col">
+        <%= form.label :address2 ,class:"form-label" %>
+        <%= form.text_field :address2, :required => true, class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Create new activity", class: "btn btn-purple col-12 mt-4 py-2" %>
+    </div>
+  <% end %>

@@ -1,0 +1,37 @@
+inherit_from:
+  - .rubocop_todo.yml
+inherit_gem:
+  rubocop-discourse: default.yml
+
+inherit_mode:
+  merge:
+    - Exclude
+    - AllowedNames
+
+AllCops:
+  TargetRubyVersion: 2.7.4
+  NewCops: enable
+  Exclude:
+    - 'script/**/*'
+
+Layout/LineLength:
+  Max: 200
+
+Metrics/BlockLength:
+  Exclude:
+    - config/**/*
+    - spec/**/*
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - spec/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
+
+Lint/MissingSuper:
+  Exclude:
+    - 'app/services/**/*'

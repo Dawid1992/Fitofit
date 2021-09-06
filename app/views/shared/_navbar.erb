@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+      aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <% if user_signed_in? %>
+          <li class="nav-item ms-1">
+            <%= link_to 'FitoFit', root_path, class: "navbar-brand text-dark-blue" %>
+          </li>
+        <% end %>
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <% if user_signed_in? %>
+          <li class="nav-item ms-1">
+            <%= link_to 'Edit account', edit_user_registration_path, class: "nav-link"%>
+          </li>
+          <li class="nav-item ms-1">
+            <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-purple"%>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Sign Up', new_user_registration_path, class: "nav-link mr-2" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign In', new_user_session_path, class: "btn btn-purple"%>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

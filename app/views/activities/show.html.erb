@@ -1,0 +1,7 @@
+<p>
+    You walked from the point <b><%= @activity.address1 %></b> to the point <b><%= @activity.address2 %></b>
+</p>
+<p>Your distance is: <b><%= @activity.distance rescue 0.0 %> km</b> </p>
+<p>You managed to walk this week: <b><%= @weekly %> km</b> </p>
+
+<%= button_to "Back to list", activities_path, :method => :get, class:'btn submit' %>
