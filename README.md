@@ -1,24 +1,13 @@
-# README
+Basic information:
+- Ruby 2.7.4
+- Rails 6.1.4
+- PostgreSQL 1.2
+- Devise for user account
+- geocoder & groupdate for results
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Tests:
+- rspec, factory_bot_rails, shoulda-matchers, capybara
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Appearance & clarity:
+- rubocop
+- bootstrap
